@@ -1,0 +1,107 @@
+/* Reset some basic elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Center the ScoreKeeper app */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Container styling */
+.text-center {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Run and Wicket display */
+#run-display,
+#wicket-display {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Padding and margin for buttons */
+.p-4 {
+  padding: 15px;
+}
+
+.m-4 {
+  margin: 15px;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .text-center {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

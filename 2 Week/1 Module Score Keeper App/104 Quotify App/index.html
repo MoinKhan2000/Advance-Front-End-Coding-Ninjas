@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      let quotes = [];
+
+      // Function to clear inputs
+      const clearInputs = (nameRef, quoteRef) => {
+        nameRef.current.value = "";
+        quoteRef.current.value = "";
+      };
+
+      // Function to handle 'Enter' key press and add quote
+      const handleEnter = (e, nameRef, quoteRef, updateDisplay) => {
+        if (e.key === "Enter") {
+          const name = nameRef.current.value;
+          const quote = quoteRef.current.value;
+          if (name && quote) {
+            quotes.push({ name, quote });
+            clearInputs(nameRef, quoteRef);  // Clear input fields
+            updateDisplay(); // Re-render the app after adding a new quote
+          }
+        }
+      }
+
+      const App = () => {
+        // Use refs for form inputs
+        const nameRef = React.createRef();
+        const quoteRef = React.createRef();
+
+        // Function to trigger re-render
+        const updateDisplay = () => {
+          rootElement.render(<App />);
+        };
+
+        return (
+          <div className="App">
+            <h2>Quotify</h2>
+            <div>
+              <input type="text" ref={nameRef} placeholder="Name" />
+              <input
+                type="text"
+                ref={quoteRef}
+                placeholder="Quote"
+                onKeyPress={(e) => handleEnter(e, nameRef, quoteRef, updateDisplay)}
+              />
+            </div>
+            <div className="quotes">
+              {quotes.map((q, i) => (
+                <div key={i}>
+                  <i>"{q.quote}"</i>
+                  <b>~ {q.name}</b>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      };
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+  </body>
+
+</html>

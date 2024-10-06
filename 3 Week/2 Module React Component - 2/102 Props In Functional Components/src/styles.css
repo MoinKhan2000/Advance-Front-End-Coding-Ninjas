@@ -1,0 +1,51 @@
+.card {
+  width: 60%;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff9090, #90cfff);
+  animation: hue-rotate 5s infinite linear,
+    gradient-animation 5s infinite linear;
+  color: white; /* Adjust text color for better contrast */
+  position: relative; /* Ensure the button aligns well */
+}
+
+.card-button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-button:hover {
+  background: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
+  border-color: rgba(255, 255, 255, 0.6); /* Change border color on hover */
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+  background-size: 200% 200%; /* Adjust for the gradient animation */
+}

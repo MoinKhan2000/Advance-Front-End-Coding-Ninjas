@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Data array to store form submissions
+      let data = [];
+
+      // Function to handle form submission
+      const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Retrieve values from the form input elements
+        const inputName = e.target.elements[0].value;
+        const inputNumber = e.target.elements[1].value;
+
+        // Update the data array with the new submission
+        data.push({ name: inputName, number: inputNumber });
+
+        // Clear the form after submission
+        e.target.reset();
+
+        // Update the UI to show the new data
+        updateDisplay();
+      };
+
+      // Component to display the table with the data
+      const Table = ({ data }) => {
+        return (
+          <table border="1" style={{ marginTop: "20px", width: "100%" }}>
+            <thead>
+              <tr>
+                <th>Student's Name</th>
+                <th>Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.length > 0 ? (
+                data.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.number}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="2">No data available</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        );
+      };
+
+      // Form component to submit data
+      const Form = () => (
+        <>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Enter Student Name" required />
+            <input type="number" placeholder="Enter Marks" required />
+            <button type="submit">Submit</button>
+          </form>
+        </>
+      );
+
+      // Main component rendering both form and result (table)
+      const App = () => (
+        <>
+          <Form />
+          <Table data={data} />
+        </>
+      );
+
+      // Function to update the UI whenever data changes
+      const updateDisplay = () => {
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<App />);
+      };
+
+      // Initial render
+      updateDisplay();
+    </script>
+  </body>
+
+</html>
