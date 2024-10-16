@@ -1,0 +1,49 @@
+/* Styles for the Navbar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(90deg, blueviolet, pink);
+  position: relative;
+}
+
+.logo {
+  flex: 1;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Cart container to hold the icon and number */
+.cartContainer {
+  flex: 1;
+  text-align: right;
+  position: relative;
+}
+
+/* Styles for the cart icon */
+.cartIcon {
+  margin-right: 10px;
+  width: 40px;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Styles for the number badge on the cart icon */
+.cartNum {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: cyan;
+  color: black;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,125 @@
+/* Apply a free background image from Freepik (replace with your actual image URL) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* background-image: url("https://img.freepik.com/free-photo/abstract-digital-clock-background_1379-39.jpg?w=1380&t=st=1683546119~exp=1683546719~hmac=10d3e91d540c7e68e1687af301b2cb7d5c55c3189e0e3479a25c06ae4ef9d471"); */
+  background-size: cover;
+  background-position: center;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+.clock-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.date {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Apply a free background image from Freepik (replace with your actual image URL) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* background-image: url("https://img.freepik.com/free-photo/abstract-digital-clock-background_1379-39.jpg?w=1380&t=st=1683546119~exp=1683546719~hmac=10d3e91d540c7e68e1687af301b2cb7d5c55c3189e0e3479a25c06ae4ef9d471"); */
+  background-size: cover;
+  background-position: center;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  text-align: center;
+  color: #00ff00; /* Green color similar to home digital clocks */
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+.clock-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #00ff00; /* Green color */
+  text-shadow: 0 0 5px #00ff00; /* Glow effect */
+}
+
+.time {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #00ff00; /* Green color */
+  font-family: "Digital-7 Mono", sans-serif; /* Custom digital font */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Digital glow */
+}
+
+.date {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #00ff00; /* Green color */
+  text-shadow: 0 0 5px #00ff00; /* Glow effect */
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Add WebKit-specific properties for the font */
+@font-face {
+  font-family: "Digital-7 Mono";
+  src: url("https://fonts.cdnfonts.com/s/21453/Digital-7Mono.woff")
+    format("woff");
+}
